@@ -6,7 +6,7 @@
   <arg name="ground_truth" default="true"/> <!-- publish ground truth tf tree -->
 
   <!-- gazebo args -->
-  <arg name="world_name"  default="$(find scarab_gazebo)/worlds/levine.world"/>
+  <arg name="world_name"  default="$(find scarab_gazebo)/worlds/perch.world"/>
   <arg name="verbose"     default="false"/>
   <arg name="debug"       default="false"/>
   <arg name="gazebo_gui"  default="true"/>
@@ -53,9 +53,9 @@
         args="0 0 0 0 0 0 ground_truth/base_link $(arg base_frame)"
         if="$(arg ground_truth)"/>
 
-  <!-- load levine world -->
-  <node name="levine_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
-        args="-sdf -model levine -file $(find scarab_gazebo)/models/levine/model.sdf"/>
+  <!-- load perch world -->
+  <node name="perch_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-sdf -model perch -file $(find scarab_gazebo)/models/perch/model.sdf"/>
 
   <group ns="$(arg agent)">
 
